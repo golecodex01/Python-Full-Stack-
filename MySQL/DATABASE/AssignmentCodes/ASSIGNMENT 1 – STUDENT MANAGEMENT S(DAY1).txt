@@ -1,0 +1,263 @@
+ASSIGNMENT 1 – STUDENT MANAGEMENT SYSTEM
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 18
+Server version: 8.0.46 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database school_db;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> use school_db;
+Database changed
+mysql> create table student()
+    ->
+    ->
+    ->
+    ->
+    ->
+    ->
+mysql> use school_db;
+Database changed
+mysql> create table student(student_id int primary key auto increament, student_name varchar(50),age int , course varchar(50),city varchar(50),marks int );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto increament, student_name varchar(50),age int , course varchar(50),city varc' at line 1
+mysql> create table student(student_id int primary key auto_increament, student_name varchar(50),age int , course varchar(50),city varchar(50),marks int );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto_increament, student_name varchar(50),age int , course varchar(50),city varc' at line 1
+mysql> create table student(student_id int primary key auto_increment, student_name varchar(50),age int , course varchar(50),city varchar(50),marks int );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql>mysql> insert into student(student_name,age,course,city,marks) values(('Rahul Sharma ',21,'Python','Indore',85));
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into student(student_name,age,course,city,marks) values('Rahul Sharma ',21,'Python','Indore',85);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select*from student;
++------------+---------------+------+--------+--------+-------+
+| student_id | student_name  | age  | course | city   | marks |
++------------+---------------+------+--------+--------+-------+
+|          1 | Rahul Sharma  |   21 | Python | Indore |    85 |
++------------+---------------+------+--------+--------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into student(student_name,age,course,city,marks) values ('Priya Varma',22,'java','Bhopal',78),('Amit singh ',20,'python','Indore',78);
+Query OK, 2 rows affected (0.05 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++------------+---------------+------+--------+--------+-------+
+| student_id | student_name  | age  | course | city   | marks |
++------------+---------------+------+--------+--------+-------+
+|          1 | Rahul Sharma  |   21 | Python | Indore |    85 |
+|          2 | Priya Varma   |   22 | java   | Bhopal |    78 |
+|          3 | Amit singh    |   20 | python | Indore |    78 |
++------------+---------------+------+--------+--------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into student (student_name, age, course, city, marks)
+    -> values
+    -> ('Neha Patel', 23, 'Java', 'Pune', 81),
+    -> ('Rohit Mehta', 21, 'Python', 'Mumbai', 88),
+    -> ('Sneha Jain', 22, 'Java', 'Indore', 76),
+    -> ('Karan Gupta', 20, 'Python', 'Delhi', 95),
+    -> ('Pooja Mishra', 23, 'Java', 'Bhopal', 84),
+    -> ('Ankit Tiwari', 21, 'Python', 'Pune', 79),
+    -> ('Riya Kapoor', 22, 'Java', 'Mumbai', 91);
+Query OK, 7 rows affected (0.01 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> select*from student;
++------------+---------------+------+--------+--------+-------+
+| student_id | student_name  | age  | course | city   | marks |
++------------+---------------+------+--------+--------+-------+
+|          1 | Rahul Sharma  |   21 | Python | Indore |    85 |
+|          2 | Priya Varma   |   22 | java   | Bhopal |    78 |
+|          3 | Amit singh    |   20 | python | Indore |    78 |
+|          4 | Neha Patel    |   23 | Java   | Pune   |    81 |
+|          5 | Rohit Mehta   |   21 | Python | Mumbai |    88 |
+|          6 | Sneha Jain    |   22 | Java   | Indore |    76 |
+|          7 | Karan Gupta   |   20 | Python | Delhi  |    95 |
+|          8 | Pooja Mishra  |   23 | Java   | Bhopal |    84 |
+|          9 | Ankit Tiwari  |   21 | Python | Pune   |    79 |
+|         10 | Riya Kapoor   |   22 | Java   | Mumbai |    91 |
++------------+---------------+------+--------+--------+-------+
+10 rows in set (0.00 sec)
+
+mysql>
+mysql> desc student;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| student_id   | int         | NO   | PRI | NULL    | auto_increment |
+| student_name | varchar(50) | YES  |     | NULL    |                |
+| age          | int         | YES  |     | NULL    |                |
+| course       | varchar(50) | YES  |     | NULL    |                |
+| city         | varchar(50) | YES  |     | NULL    |                |
+| marks        | int         | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql>
+
+
+mysql> select*from student;
++------------+---------------+------+--------+--------+-------+
+| student_id | student_name  | age  | course | city   | marks |
++------------+---------------+------+--------+--------+-------+
+|          1 | Rahul Sharma  |   21 | Python | Indore |    85 |
+|          2 | Priya Varma   |   22 | java   | Bhopal |    78 |
+|          3 | Amit singh    |   20 | python | Indore |    78 |
+|          4 | Neha Patel    |   23 | Java   | Pune   |    81 |
+|          5 | Rohit Mehta   |   21 | Python | Mumbai |    88 |
+|          6 | Sneha Jain    |   22 | Java   | Indore |    76 |
+|          7 | Karan Gupta   |   20 | Python | Delhi  |    95 |
+|          8 | Pooja Mishra  |   23 | Java   | Bhopal |    84 |
+|          9 | Ankit Tiwari  |   21 | Python | Pune   |    79 |
+|         10 | Riya Kapoor   |   22 | Java   | Mumbai |    91 |
++------------+---------------+------+--------+--------+-------+
+10 rows in set (0.00 sec)
+
+mysql>
+
+
+*************************************************************************************************
+
+Assignment2 
+mysql> create database company_db;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use company_db;
+Database changed
+mysql>
+mysql> create table employee (
+    ->     employee_id int primary key auto_increment,
+    ->     employee_name varchar(50),
+    ->     age int,
+    ->     department varchar(50),
+    ->     designation varchar(50),
+    ->     salary int
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into employee (employee_name, age, department, designation, salary)
+    -> values
+    -> ('Rahul Sharma', 28, 'IT', 'Developer', 55000),
+    -> ('Priya Verma', 26, 'HR', 'Executive', 42000),
+    -> ('Amit Singh', 30, 'IT', 'Team Lead', 75000),
+    -> ('Neha Patel', 27, 'Finance', 'Accountant', 48000),
+    -> ('Rohit Mehta', 32, 'IT', 'Manager', 90000),
+    -> ('Sneha Jain', 25, 'Marketing', 'Executive', 40000),
+    -> ('Karan Gupta', 29, 'IT', 'Developer', 60000),
+    -> ('Pooja Mishra', 31, 'HR', 'Manager', 80000),
+    -> ('Ankit Tiwari', 28, 'Finance', 'Analyst', 65000),
+    -> ('Riya Kapoor', 27, 'Marketing', 'Manager', 70000);
+Query OK, 10 rows affected (0.02 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| employee_id   | int         | NO   | PRI | NULL    | auto_increment |
+| employee_name | varchar(50) | YES  |     | NULL    |                |
+| age           | int         | YES  |     | NULL    |                |
+| department    | varchar(50) | YES  |     | NULL    |                |
+| designation   | varchar(50) | YES  |     | NULL    |                |
+| salary        | int         | YES  |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from employee;
++-------------+---------------+------+------------+-------------+--------+
+| employee_id | employee_name | age  | department | designation | salary |
++-------------+---------------+------+------------+-------------+--------+
+|           1 | Rahul Sharma  |   28 | IT         | Developer   |  55000 |
+|           2 | Priya Verma   |   26 | HR         | Executive   |  42000 |
+|           3 | Amit Singh    |   30 | IT         | Team Lead   |  75000 |
+|           4 | Neha Patel    |   27 | Finance    | Accountant  |  48000 |
+|           5 | Rohit Mehta   |   32 | IT         | Manager     |  90000 |
+|           6 | Sneha Jain    |   25 | Marketing  | Executive   |  40000 |
+|           7 | Karan Gupta   |   29 | IT         | Developer   |  60000 |
+|           8 | Pooja Mishra  |   31 | HR         | Manager     |  80000 |
+|           9 | Ankit Tiwari  |   28 | Finance    | Analyst     |  65000 |
+|          10 | Riya Kapoor   |   27 | Marketing  | Manager     |  70000 |
++-------------+---------------+------+------------+-------------+--------+
+10 rows in set (0.00 sec)
+
+mysql>
+
+***********************************************************************************
+
+Assignment 3 
+
+
+mysql> create database shop_db;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> use shop_db;
+Database changed
+mysql>
+mysql> create table product (
+    ->     product_id int primary key auto_increment,
+    ->     product_name varchar(50),
+    ->     category varchar(50),
+    ->     brand varchar(50),
+    ->     price int,
+    ->     quantity int
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> insert into product (product_name, category, brand, price, quantity)
+    -> values
+    -> ('Laptop', 'Electronics', 'Dell', 55000, 10),
+    -> ('Smartphone', 'Electronics', 'Samsung', 25000, 15),
+    -> ('Keyboard', 'Accessories', 'Logitech', 1500, 25),
+    -> ('Mouse', 'Accessories', 'HP', 800, 30),
+    -> ('Monitor', 'Electronics', 'LG', 18000, 12),
+    -> ('Headphones', 'Accessories', 'Sony', 3000, 20),
+    -> ('Printer', 'Electronics', 'Canon', 12000, 8),
+    -> ('Tablet', 'Electronics', 'Lenovo', 22000, 14),
+    -> ('Webcam', 'Accessories', 'Logitech', 2500, 18),
+    -> ('Speaker', 'Accessories', 'JBL', 4500, 16);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> desc product;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| product_id   | int         | NO   | PRI | NULL    | auto_increment |
+| product_name | varchar(50) | YES  |     | NULL    |                |
+| category     | varchar(50) | YES  |     | NULL    |                |
+| brand        | varchar(50) | YES  |     | NULL    |                |
+| price        | int         | YES  |     | NULL    |                |
+| quantity     | int         | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from product;
++------------+--------------+-------------+----------+-------+----------+
+| product_id | product_name | category    | brand    | price | quantity |
++------------+--------------+-------------+----------+-------+----------+
+|          1 | Laptop       | Electronics | Dell     | 55000 |       10 |
+|          2 | Smartphone   | Electronics | Samsung  | 25000 |       15 |
+|          3 | Keyboard     | Accessories | Logitech |  1500 |       25 |
+|          4 | Mouse        | Accessories | HP       |   800 |       30 |
+|          5 | Monitor      | Electronics | LG       | 18000 |       12 |
+|          6 | Headphones   | Accessories | Sony     |  3000 |       20 |
+|          7 | Printer      | Electronics | Canon    | 12000 |        8 |
+|          8 | Tablet       | Electronics | Lenovo   | 22000 |       14 |
+|          9 | Webcam       | Accessories | Logitech |  2500 |       18 |
+|         10 | Speaker      | Accessories | JBL      |  4500 |       16 |
++------------+--------------+-------------+----------+-------+----------+
+10 rows in set (0.00 sec)
+
+mysql>
