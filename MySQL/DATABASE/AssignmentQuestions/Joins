@@ -1,0 +1,37 @@
+Assignment 1:
+ Understanding INNER JOIN
+Problem Statement:
+Consider the following tables:
+Employees
+emp_id emp_name dept_id
+1 Alice 101
+2 Bob 102
+3 Charlie 103
+4 David 101
+Departments
+dept_id  dept_name
+101      HR
+102     IT
+104     Finance
+
+Tasks:
+
+Write a query to display employees and their corresponding department names using INNER JOIN.
+Modify the query to display only employees who belong to the "HR" department.
+
+Assignment 2: LEFT JOIN Practice
+
+Using the same Employees and Departments tables, answer the following:
+Tasks:
+Write a query using LEFT JOIN to display all employees and their department names, including employees with no department.
+Modify the query to count how many employees are without a department.
+
+Assignment 3: RIGHT JOIN Practice
+Problem Statement:
+Consider the same tables.
+Tasks:
+Write a query using RIGHT JOIN to display all departments and their employees, including departments with no employees.
+Find the names of departments that have no employees assigned.
+Assignment 4: FULL OUTER JOIN Simulation
+Problem Statement:
+Since MySQL does not support FULL OUTER JOIN directly, use a combination of LEFT JOIN and RIGHT JOIN to display all employees and departments, ensuring that unmatched records are also included.
